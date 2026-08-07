@@ -150,6 +150,8 @@ const mediaByPhotoId = {
   potrerosverde: "assets/fotos/potrerosverdes.jpeg",
   potrerosverdes: "assets/fotos/potrerosverdes.jpeg",
   videoinunda: "assets/fotos/videoinunda.mp4",
+  anegados: "assets/fotos/annegados.mp4",
+  annegados: "assets/fotos/annegados.mp4",
 };
 
 const mediaDescriptions = {

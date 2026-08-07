@@ -35,6 +35,7 @@ def build_viewer_html() -> str:
         ("assets/simbolos_especies/Ssam_samanea_saman.svg", "image/svg+xml"),
         ("assets/simbolos_especies/Pjul_prosopis_juliflora.svg", "image/svg+xml"),
         ("assets/fotos/videoinunda.mp4", "video/mp4"),
+        ("assets/fotos/annegados.mp4", "video/mp4"),
     ]
 
     for relative_path, mime in embedded_assets:
