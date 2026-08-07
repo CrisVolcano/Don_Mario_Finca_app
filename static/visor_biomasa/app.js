@@ -635,7 +635,7 @@ function mediaMarkup(feature) {
   const cleanPath = path.replaceAll('"', "%22");
   const description = mediaDescription(feature);
   const caption = description ? `<p class="popup-description">${description}</p>` : "";
-  if (/\.(mp4|webm|mov)$/i.test(cleanPath)) {
+  if (/^data:video\//i.test(cleanPath) || /\.(mp4|webm|mov)(\?|#|$)/i.test(cleanPath)) {
     return `<video class="popup-media" src="${cleanPath}" controls preload="metadata"></video>${caption}`;
   }
   return `<img class="popup-media" src="${cleanPath}" alt="Registro fotografico">${caption}`;
