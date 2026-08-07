@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+.DS_Store
+Thumbs.db
+static/visor_biomasa/fuentes_originales/
+static/visor_biomasa/data/rasters_prepared/
+static/visor_biomasa/scripts/
+static/visor_biomasa/server.py
+static/visor_biomasa/run_viewer.ps1
+static/visor_biomasa/README_PORTABLE.md

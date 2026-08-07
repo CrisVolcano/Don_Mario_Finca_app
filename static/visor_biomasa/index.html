@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Propuesta de diseño de finca Don Mario</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <header class="brand">
+          <img class="brand-mark" src="assets/simbolos_especies/vaca_marca.svg" alt="">
+          <div>
+            <p class="eyebrow">Geovisor local</p>
+            <h1>Propuesta de diseño de finca Don Mario</h1>
+          </div>
+        </header>
+
+        <section class="panel">
+          <div class="panel-title">
+            <span>Raster</span>
+            <button class="icon-button" id="raster-opacity-reset" title="Restaurar opacidad" aria-label="Restaurar opacidad"></button>
+          </div>
+          <div class="raster-list" id="raster-list"></div>
+          <label class="range-row">
+            <span>Opacidad</span>
+            <input id="raster-opacity" type="range" min="20" max="100" value="92">
+          </label>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <span>Vectores</span>
+            <button class="icon-button target" id="fit-map" title="Centrar finca" aria-label="Centrar finca"></button>
+          </div>
+          <div class="layer-list" id="vector-list"></div>
+        </section>
+
+        <section class="panel compact">
+          <div class="panel-title">
+            <span>Simbología</span>
+          </div>
+          <div class="legend">
+            <div><i class="swatch pasture"></i><span>Potreros</span></div>
+            <div><i class="swatch flood"></i><span>Potreros con anegación</span></div>
+            <div><i class="swatch bank"></i><span>Bancos forrajeros</span></div>
+            <div><i class="swatch infra"></i><span>Infraestructura</span></div>
+            <div><img class="species-icon" src="assets/simbolos_especies/Gulm_guazuma_ulmifolia.svg" alt=""><span>Guazuma ulmifolia</span></div>
+            <div><img class="species-icon" src="assets/simbolos_especies/Gsep_gliricidia_sepium.svg" alt=""><span>Gliricidia sepium</span></div>
+            <div><img class="species-icon" src="assets/simbolos_especies/Ecyc_enterolobium_cyclocarpum.svg" alt=""><span>Enterolobium cyclocarpum</span></div>
+            <div><img class="species-icon" src="assets/simbolos_especies/Ssam_samanea_saman.svg" alt=""><span>Samanea saman</span></div>
+            <div><img class="species-icon" src="assets/simbolos_especies/Pjul_prosopis_juliflora.svg" alt=""><span>Prosopis juliflora</span></div>
+            <div><i class="tree-dot existing"></i><span>Árboles existentes</span></div>
+            <div><i class="line drain"></i><span>Drenajes propuestos</span></div>
+            <div><i class="line infiltration"></i><span>Líneas de infiltración</span></div>
+            <div><i class="photo-dot"></i><span>Registro fotográfico</span></div>
+          </div>
+        </section>
+
+        <footer class="license-card">
+          <strong>CC BY 4.0</strong>
+          <span>Uso libre citando: Propuesta de diseño de finca Don Mario.</span>
+        </footer>
+      </aside>
+
+      <section class="map-wrap">
+        <div class="topbar">
+          <div>
+            <p>Finca Mario · Santa Cruz</p>
+            <strong id="active-raster-name">Ortomosaico RGB</strong>
+          </div>
+          <div class="zoom-readout">
+            <span id="zoom-label">Z18</span>
+          </div>
+        </div>
+
+        <div id="map" class="map" role="application" aria-label="Mapa del visor de biomasa">
+          <div id="tile-pane" class="tile-pane"></div>
+          <canvas id="vector-canvas" class="vector-canvas"></canvas>
+          <div id="popup" class="popup" hidden></div>
+        </div>
+
+        <nav class="map-controls" aria-label="Controles de mapa">
+          <button id="zoom-in" title="Acercar" aria-label="Acercar"></button>
+          <button id="zoom-out" title="Alejar" aria-label="Alejar"></button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
