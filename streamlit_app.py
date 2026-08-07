@@ -23,6 +23,7 @@ def build_viewer_html() -> str:
     html = (VIEWER_DIR / "index.html").read_text(encoding="utf-8")
     css = (VIEWER_DIR / "styles.css").read_text(encoding="utf-8")
     js = (VIEWER_DIR / "app.js").read_text(encoding="utf-8")
+    static_base = "app/static/visor_biomasa/"
 
     embedded_assets = [
         ("assets/simbolos_especies/vaca_marca.svg", "image/svg+xml"),
@@ -33,6 +34,7 @@ def build_viewer_html() -> str:
         ("assets/simbolos_especies/Ecyc_enterolobium_cyclocarpum.svg", "image/svg+xml"),
         ("assets/simbolos_especies/Ssam_samanea_saman.svg", "image/svg+xml"),
         ("assets/simbolos_especies/Pjul_prosopis_juliflora.svg", "image/svg+xml"),
+        ("assets/fotos/videoinunda.mp4", "video/mp4"),
     ]
 
     for relative_path, mime in embedded_assets:
@@ -40,9 +42,14 @@ def build_viewer_html() -> str:
         html = html.replace(f'src="{relative_path}"', f'src="{uri}"')
         js = js.replace(f'"{relative_path}"', f'"{uri}"')
 
+    js = js.replace('"data/rasters/', f'"{static_base}data/rasters/')
+    js = js.replace('"data/vectors/', f'"{static_base}data/vectors/')
+    js = js.replace('.geojson"', '.json"')
+    js = js.replace('"assets/fotos/', f'"{static_base}assets/fotos/')
+    js = js.replace("`assets/fotos/${raw}`", f"`{static_base}assets/fotos/${{raw}}`")
+
     html = html.replace('<link rel="stylesheet" href="./styles.css">', f"<style>{css}</style>")
     html = html.replace('<script src="./app.js"></script>', f"<script>{js}</script>")
-    html = html.replace("<head>", '<head><base href="/app/static/visor_biomasa/">', 1)
     return html
 
 
