@@ -75,6 +75,20 @@
           </div>
         </div>
 
+        <button class="info-fab" id="infiltration-info-toggle" type="button" aria-expanded="false" aria-controls="infiltration-info">
+          + info
+        </button>
+
+        <aside class="info-card" id="infiltration-info" hidden>
+          <button class="info-close" id="infiltration-info-close" type="button" aria-label="Cerrar información"></button>
+          <p class="eyebrow">Líneas de infiltración</p>
+          <h2>Para más información visite</h2>
+          <div class="info-links">
+            <a href="https://www.mdpi.com/2073-445X/12/1/100" target="_blank" rel="noopener noreferrer">Artículo técnico</a>
+            <a href="https://www.youtube.com/watch?v=hZ7uoWeZm3c" target="_blank" rel="noopener noreferrer">Video explicativo</a>
+          </div>
+        </aside>
+
         <div id="map" class="map" role="application" aria-label="Mapa del visor de biomasa">
           <div id="tile-pane" class="tile-pane"></div>
           <canvas id="vector-canvas" class="vector-canvas"></canvas>

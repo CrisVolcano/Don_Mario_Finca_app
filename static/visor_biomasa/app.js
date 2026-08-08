@@ -184,6 +184,9 @@ const vectorList = document.querySelector("#vector-list");
 const zoomLabel = document.querySelector("#zoom-label");
 const activeRasterName = document.querySelector("#active-raster-name");
 const rasterOpacity = document.querySelector("#raster-opacity");
+const infiltrationInfoToggle = document.querySelector("#infiltration-info-toggle");
+const infiltrationInfo = document.querySelector("#infiltration-info");
+const infiltrationInfoClose = document.querySelector("#infiltration-info-close");
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -663,6 +666,12 @@ function hidePopup() {
   popup.hidden = true;
 }
 
+function setInfiltrationInfo(open) {
+  if (!infiltrationInfo || !infiltrationInfoToggle) return;
+  infiltrationInfo.hidden = !open;
+  infiltrationInfoToggle.setAttribute("aria-expanded", String(open));
+}
+
 function pointInRing(point, ring) {
   let inside = false;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i, i += 1) {
@@ -821,6 +830,13 @@ function bindMapEvents() {
   document.querySelector("#zoom-in").addEventListener("click", () => zoomAt(state.zoom + 1));
   document.querySelector("#zoom-out").addEventListener("click", () => zoomAt(state.zoom - 1));
   document.querySelector("#fit-map").addEventListener("click", () => fitBounds());
+  infiltrationInfoToggle?.addEventListener("click", () => {
+    setInfiltrationInfo(infiltrationInfo?.hidden ?? true);
+  });
+  infiltrationInfoClose?.addEventListener("click", () => setInfiltrationInfo(false));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setInfiltrationInfo(false);
+  });
   document.querySelector("#raster-opacity-reset").addEventListener("click", () => {
     state.rasterOpacity = 0.92;
     rasterOpacity.value = "92";

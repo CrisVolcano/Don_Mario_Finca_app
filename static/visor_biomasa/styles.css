@@ -473,6 +473,116 @@ input[type="range"] {
   gap: 8px;
 }
 
+.info-fab {
+  position: absolute;
+  z-index: 5;
+  top: 86px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 28px rgba(20, 31, 27, 0.14);
+  color: #17201d;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.info-fab:hover,
+.info-fab[aria-expanded="true"] {
+  background: #17201d;
+  color: #fff;
+}
+
+.info-card {
+  position: absolute;
+  z-index: 7;
+  top: 132px;
+  right: 20px;
+  width: min(310px, calc(100vw - 380px));
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(20, 31, 27, 0.18);
+}
+
+.info-card h2 {
+  margin: 4px 28px 12px 0;
+  color: #17201d;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.info-links {
+  display: grid;
+  gap: 8px;
+}
+
+.info-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(47, 157, 103, 0.22);
+  border-radius: 8px;
+  background: #eef8f1;
+  color: #1f6b43;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.info-links a::after {
+  content: "↗";
+  color: #48715f;
+  font-size: 13px;
+}
+
+.info-links a:hover {
+  background: #dff1e6;
+}
+
+.info-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(23, 32, 29, 0.1);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.info-close::before,
+.info-close::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 7px;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: #17201d;
+}
+
+.info-close::before {
+  transform: rotate(45deg);
+}
+
+.info-close::after {
+  transform: rotate(-45deg);
+}
+
 .map-controls button::before,
 .map-controls button::after {
   content: "";
@@ -599,5 +709,19 @@ input[type="range"] {
 
   .topbar > div {
     max-width: calc(100vw - 96px);
+  }
+
+  .info-fab {
+    top: 76px;
+    right: 12px;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 12px;
+  }
+
+  .info-card {
+    top: 118px;
+    right: 12px;
+    width: min(290px, calc(100vw - 24px));
   }
 }
