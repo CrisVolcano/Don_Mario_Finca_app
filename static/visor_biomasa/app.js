@@ -93,7 +93,7 @@ const vectorLayers = [
     name: "Propuesta de sistemas de drenaje",
     detail: "Drenaje superficial",
     url: "data/vectors/drenaje_principal.geojson",
-    visible: true,
+    visible: false,
     style: { stroke: "#1f78ff", fill: "rgba(31,120,255,0.12)", width: 3.1, dash: [], haloStroke: "rgba(8,42,92,0.34)", haloWidth: 5.8 },
   },
   {
@@ -101,7 +101,7 @@ const vectorLayers = [
     name: "Líneas de infiltración",
     detail: "Diseño propuesto",
     url: "data/vectors/lineas_offset_10m.geojson",
-    visible: true,
+    visible: false,
     style: { stroke: "#8a5a32", fill: "rgba(138,90,50,0.12)", width: 2.6, dash: [8, 5], haloStroke: "rgba(54,34,18,0.34)", haloWidth: 5.2 },
   },
   {
@@ -109,7 +109,7 @@ const vectorLayers = [
     name: "Árboles propuestos",
     detail: "SSP · por especie",
     url: "data/vectors/ssp_arboles.geojson",
-    visible: true,
+    visible: false,
     style: { stroke: "#1e6b43", fill: "#46a758", halo: "rgba(222,247,196,0.72)", width: 1.6, radius: 5.5, iconSize: 24 },
   },
   {
@@ -117,7 +117,7 @@ const vectorLayers = [
     name: "Árboles existentes",
     detail: "Puntos preexistentes",
     url: "data/vectors/arboles_existentes.geojson",
-    visible: true,
+    visible: false,
     style: { stroke: "#314f2c", fill: "#78a33f", halo: "rgba(255,232,163,0.66)", width: 1.7, radius: 5.2, iconSize: 22 },
   },
   {
