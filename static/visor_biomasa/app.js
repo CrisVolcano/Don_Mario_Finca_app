@@ -352,12 +352,12 @@ function layerStyle(layer, feature) {
   if (layer.id === "potreros" && Number(feature.properties?.anegacion_problemas) === 1) {
     return {
       ...layer.style,
-      stroke: "#2a9d8f",
-      fill: "rgba(42,157,143,0.2)",
-      width: 2,
-      dash: [5, 4],
-      haloStroke: "rgba(8,79,82,0.2)",
-      haloWidth: 4.2,
+      stroke: "#1f78ff",
+      fill: "rgba(31,120,255,0.28)",
+      width: 2.4,
+      dash: [6, 3],
+      haloStroke: "rgba(7,49,122,0.28)",
+      haloWidth: 5,
     };
   }
   if (layer.id === "lineas_offset_10m") {
